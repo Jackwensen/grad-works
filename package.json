@@ -1,8 +1,8 @@
 {
-  "name": "electron-vue-admin",
+  "name": "grad-works",
   "version": "0.0.1",
-  "author": "sky <https://github.com/umbrella22>",
-  "description": "An electron-vue project",
+  "author": "bai <https://github.com/Jackwensen>",
+  "description": "based on an electron-vue project",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
@@ -25,11 +25,11 @@
     "extraFiles": [],
     "publish": [
       {
-        "provider": "generic",
+        "provider": "bai",
         "url": "http://127.0.0.1"
       }
     ],
-    "productName": "electron-vue-admin",
+    "productName": "grad-works",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"

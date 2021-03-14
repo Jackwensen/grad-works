@@ -4,11 +4,6 @@
 
 - 因为花裤衩大大的 ELECTRON 版本已经一年没有更新了,而且 ELECTRON,vue,elementui,都已经迭代太多,刚好我司有这方面的需求,我就在 vue-electron 脚手架生成的项目基础上,将花裤衩大大的项目核心组件提取出来合并到这个项目中，在我简单的封装了 axios 和 db．以及 electron 常用的信息弹窗，错误弹窗，具体文档地址：[中文在线文档](https://umbrella22.github.io/electron-vue-template-doc/)，[国内访问地址](https://zh-sky.gitee.io/electron-vue-template-doc/)。
 
-- vite 版本 [electron-vite-template](https://github.com/umbrella22/electron-vite-template)
-
-- [electron-vite-template（码云）](https://gitee.com/Zh-Sky/electron-vite-template)
-
-- react 版 [Electron-react-template](https://github.com/umbrella22/electron-react-template)
 
 <div align="center" >
   <span>测试打包状态：</span>
@@ -16,6 +11,20 @@
     <img src="https://github.com/umbrella22/electron-vue-template/actions/workflows/build-test.yml/badge.svg">
   </a>
 </div>
+
+<p align="center">
+  <a href="https://github.com/umbrella22/electron-vue-template">
+    <img src="https://github.com/umbrella22/electron-vue-template/actions/workflows/build-test.yml/badge.svg">
+  </a>
+</p>
+
+<h3 align="center">Thanks for support.</h3>
+
+<p align="center">
+  <a href="https://www.jetbrains.com/?from=electron-vue-template" target="_blank">
+    <img width="160px" src="https://github.com/umbrella22/MCsever/blob/master/jetbrains.png">
+  </a>
+</p>
 
 请确保您的node环境是大于或等于10
 

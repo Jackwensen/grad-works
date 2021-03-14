@@ -1,14 +1,17 @@
 <template>
   <div class="sidebar-logo-container" :class="{'collapse':collapse}">
     <transition name="sidebarLogoFade">
+
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
         <svg-icon icon-class="logo" class-name="sidebar-logo"></svg-icon>
         <div class="sidebar-title">{{ title }}</div>
       </router-link>
+
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
         <svg-icon icon-class="logo" class-name="sidebar-logo"></svg-icon>
         <div class="sidebar-title">{{ title }}</div>
       </router-link>
+      
     </transition>
   </div>
 </template>
@@ -24,7 +27,7 @@ export default {
   },
   data() {
     return {
-      title: "logo名称",
+      title: "大厅",
     };
   }
 };

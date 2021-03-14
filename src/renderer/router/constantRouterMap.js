@@ -42,6 +42,32 @@ export default [
   },
 
   {
+    path: '/2048',
+    component: Layout,
+    meta: { title: '2048', icon: 'table' },
+    children: [
+      {
+        path: 'index',
+        name: '2048',
+        component: () => import('@/views/2048/index'),
+        meta: { title: '2048', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/mine',
+    component: Layout,
+    meta: { title: '扫雷', icon: 'table' },
+    children: [
+      {
+        path: 'index',
+        name: 'mine-Sweeper',
+        component: () => import('@/views/mine/index'),
+        meta: { title: '扫雷', icon: 'table' }
+      }
+    ]
+  },
+  {
     path: '/form',
     component: Layout,
     meta: { title: '表单', icon: 'form' },
@@ -51,12 +77,6 @@ export default [
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: '表单', icon: 'form' }
-      },
-      {
-        path: 'index2',
-        name: 'Form2',
-        component: () => import('@/views/form/index'),
-        meta: { title: '表单2', icon: 'form' }
       }
     ]
   },

@@ -9,7 +9,7 @@
         ref="loginForm"
         label-position="left"
       >
-        <h3 class="title">后台管理框架</h3>
+        <h3 class="title">复试作品</h3>
         <el-form-item prop="username">
           <span class="svg-container svg-container_login">
             <svg-icon icon-class="user" />
@@ -94,9 +94,8 @@ export default {
       }
     },
     handleLogin() {
-      console.log(11111);
       this.$refs.loginForm.validate(valid => {
-        console.log(valid);
+        console.log('login:',valid);
         if (valid) {
           this.loading = true;
           this.$store
