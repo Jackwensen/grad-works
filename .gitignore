@@ -9,6 +9,10 @@ yarn-debug.log*
 yarn-error.log*
 README_ZH.md
 LICENSE
+build/builder-debug.yml
+build/grad-works Setup 0.0.1.exe
+build/grad-works Setup 0.0.1.exe.blockmap
+build/latest.yml
 
 # Editor directories and files
 .idea
