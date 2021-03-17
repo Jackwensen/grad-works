@@ -1,27 +1,33 @@
 <!--  -->
 <template>
   <div class="app-container">
-    <div id="gnav" ref="gnav">
-			<!-- <input type="text" id="mine-total" /> -->
-      <input v-model="mine_total" id="mine-total" />
-
-      <!-- <el-radio v-model="level" label="0" @click="select_lev(0)" >初级</el-radio>
-      <el-radio v-model="level" label="1" @click="select_lev(1)" >中级</el-radio>
-      <el-radio v-model="level" label="2" @click="select_lev(2)" >高级</el-radio> -->
-
-      <el-radio-group v-model="level">
-        <el-radio :label="0">初级</el-radio>
-        <el-radio :label="1">中级</el-radio>
-        <el-radio :label="2">高级</el-radio>
-      </el-radio-group>
+    <div class="layout">
+      <div class="alert">
+        <el-alert
+          title="基于canvas的扫雷"
+          description="右键点击数字可使用辅助"
+          type="info"
+          effect="dark"
+          show-icon>
+        </el-alert>
+      </div>
       
-      <el-button type="primary" size="mini" @click="select_lev()">重新开始</el-button>
+      <div id="gnav" ref="gnav">
 
-			<!-- <input type="text" id="timer" /> -->
-      <input v-model="mine_timer" id="timer" />
-		</div>
+        <input style="margin-right: 10px" v-model="mine_total" id="mine-total" />
 
-    <canvas id="myCanvas"></canvas>
+        <el-radio-group style="margin-right: 5px" v-model="level" size="small">
+          <el-radio-button :label="0">初级</el-radio-button>
+          <el-radio-button :label="1">中级</el-radio-button>
+          <el-radio-button :label="2">高级</el-radio-button>
+        </el-radio-group>
+        <el-button type="primary" size="small" @click="select_lev()" round>开始</el-button>
+
+        <input style="margin-left: 10px" v-model="mine_timer" id="timer" />
+      </div>
+
+      <canvas id="myCanvas"></canvas>
+    </div>
   </div>
 </template>
 
@@ -42,7 +48,7 @@ let g_color = {//预设游戏块颜色
     highlight: '#69d',
   };
 let gblock = {//布局,游戏块尺寸:宽度,圆角,外边距
-    width: 50,
+    width: 40,
     radius: 6,
     margin: 2,
   };
@@ -70,14 +76,10 @@ export default {
   },
 
   mounted() {
-    this.initCanvas()
     this.init();
   },
 
   methods: {
-    initCanvas() {      
-      
-    },
     init() {
       console.log("初始化canvas")
       canv = document.getElementById('myCanvas');
@@ -369,19 +371,37 @@ export default {
 }
 </script>
 
-<style rel='stylesheet/scss' lang='scss' scoped>
+<style lang='scss' scoped>
+.alert {
+    width: 600px;
+  }
+.layout {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow: auto;
+  }
   #gnav {
-    height: 30px;
+    padding-top: 15px;
+    height: 60px;
     text-align: center;
   }
 
   #mine-total {
-    width: 30px;
+    width: 45px;
+    height: 30px;
+    border-radius: 10px;
     text-align: center;
   }
 
   #timer {
-    width: 60px;
+    width: 45px;
+    height: 30px;
+    border-radius: 10px;
     text-align: center;
   }
 

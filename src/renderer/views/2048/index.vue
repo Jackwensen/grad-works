@@ -1,6 +1,22 @@
 <template>
 <div class="app-container">
   <div class="layout">
+    <div class="alert">
+      <el-alert
+        title="基于Dom的2048"
+        description="用方向键控制上下左右"
+        type="info"
+        effect="dark"
+        show-icon>
+      </el-alert>
+      <el-alert
+        style="margin-top: 10px"
+        title="可能会出现一些bug，使用f5刷新即可"
+        type="warning"
+        effect="dark"
+        show-icon>
+      </el-alert>
+    </div>
     <header>
       <span class="score">总分：{{score}}</span>
       <button class="star" @click="init">新游戏</button>
@@ -8,7 +24,7 @@
     </header>
     <div class="all-container">
       <div class="background">
-        <span v-for="list in 16"></span>
+        <span v-for="list in 16" :key="list"></span>
       </div>
       <div class="container">
         <span
@@ -29,6 +45,7 @@
         </span>
       </div>
     </div>
+
   </div>
 </div>
 </template>
@@ -143,13 +160,13 @@
        */
       isGameOver() {
         const result = this.isFull() && this.rocks
-            .filter(e=>e && (e.x!==3 || e.y !==3))
-            .find(e=>{
-              const nextX = this.getRockByPoint({x:e.x+1, y:e.y});
-              const nextY = this.getRockByPoint({x:e.x, y:e.y+1});
-              return (e.num === (nextX&&nextX.num) ||
-                e.num === (nextY&&nextY.num));
-            });
+          .filter(e=>e && (e.x!==3 || e.y !==3))
+          .find(e=>{
+            const nextX = this.getRockByPoint({x:e.x+1, y:e.y});
+            const nextY = this.getRockByPoint({x:e.x, y:e.y+1});
+            return (e.num === (nextX && nextX.num) ||
+              e.num === (nextY && nextY.num));
+          });
         return result === undefined;
       },
 
@@ -327,6 +344,9 @@
   body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  .alert {
+    width: 500px;
   }
   .layout {
     overflow: auto;

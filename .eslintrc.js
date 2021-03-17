@@ -16,7 +16,8 @@ module.exports = {
   plugins: [
     'html'
   ],
-  'rules': {
+  rules: {
+    'vue/no-use-v-if-with-v-for': 'off',
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

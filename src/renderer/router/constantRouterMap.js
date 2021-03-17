@@ -32,11 +32,11 @@ export default [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    name: '主页',
+    name: '总览',
     hidden: true,
     children: [{
       path: 'dashboard',
-      name: '总览',
+      name: '主页',
       component: () => import('@/components/LandingPage')
     }]
   },
@@ -44,7 +44,7 @@ export default [
   {
     path: '/2048',
     component: Layout,
-    meta: { title: '2048', icon: 'table' },
+    meta: { title: '2048' },
     children: [
       {
         path: 'index',
@@ -55,40 +55,41 @@ export default [
     ]
   },
   {
+    path: '/snake',
+    component: Layout,
+    meta: { title: '贪吃蛇' },
+    children: [
+      {
+        path: 'index',
+        name: 'eat-Snake',
+        component: () => import('@/views/snake/index'),
+        meta: { title: '贪吃蛇', icon: 'nested' }
+      }
+    ]
+  },
+  {
     path: '/mine',
     component: Layout,
-    meta: { title: '扫雷', icon: 'table' },
+    meta: { title: '扫雷' },
     children: [
       {
         path: 'index',
         name: 'mine-Sweeper',
         component: () => import('@/views/mine/index'),
-        meta: { title: '扫雷', icon: 'table' }
+        meta: { title: '扫雷', icon: 'reduction' }
       }
     ]
   },
   {
-    path: '/form',
+    path: '/gobang',
     component: Layout,
-    meta: { title: '表单', icon: 'form' },
+    meta: { title: '五子棋' },
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/table',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: '表格',
-        component: () => import('@/views/table/index'),
-        meta: { title: '表格', icon: 'table' }
+        name: 'goBang',
+        component: () => import('@/views/gobang/index'),
+        meta: { title: '五子棋', icon: 'example' }
       }
     ]
   }

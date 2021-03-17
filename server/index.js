@@ -8,5 +8,5 @@ const server = app.listen(25565, function () {
   const host = server.address().address
   const port = server.address().port
 
-  console.log('服务启动', host, port)
+  console.log('服务启动~', host, port)
 })
