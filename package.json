@@ -1,8 +1,8 @@
 {
   "name": "grad-works",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "bai <https://github.com/Jackwensen>",
-  "description": "based on an electron-vue project",
+  "description": "白景文研究生复试作品",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
